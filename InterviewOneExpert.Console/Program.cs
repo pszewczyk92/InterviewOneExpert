@@ -1,4 +1,5 @@
 ﻿using InterviewOneExpert.Console.Configuration;
+using InterviewOneExpert.Domain.Models;
 using InterviewOneExpert.Services.Abstraction;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,7 +17,16 @@ class Program
         [
             orderService.ProcessOrderAsync(1),
             orderService.ProcessOrderAsync(2),
-            orderService.ProcessOrderAsync(-1)
+            orderService.ProcessOrderAsync(-1),
+
+            Task.Run(() => orderService.AddOrder(new Order{Id = 1, Description = "Server"})),
+            Task.Run(() => orderService.AddOrder(new Order{Id = -1, Description = "Empty"})),
+            Task.Run(() => orderService.AddOrder(new Order{Id = 3, Description = "Tablet"})),
+            Task.Run(() => orderService.AddOrder(new Order{Id = 4, Description = "Watch"})),
+            Task.Run(() => orderService.AddOrder(new Order{Id = 3, Description = "iPad"})),
+
+            orderService.ProcessOrderAsync(3),
+            orderService.ProcessOrderAsync(4)
         ];
         
         await Task.WhenAll(tasks);

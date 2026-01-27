@@ -30,4 +30,15 @@ public class InMemoryOrderRepository : IOrderRepository
 
         return order.Description;
     }
+
+    public void AddOrder(Order? order)
+    {
+        ArgumentNullException.ThrowIfNull(order);
+
+        if (order.Id <= 0)
+            throw new ArgumentException("Order ID must be greater than zero.");
+
+        if (!_orders.TryAdd(order.Id, order))
+            throw new InvalidOperationException($"Order {order.Id} already exists.");
+    }
 }
