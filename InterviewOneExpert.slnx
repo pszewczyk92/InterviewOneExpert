@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="InterviewOneExpert.Console/InterviewOneExpert.Console.csproj" />
   <Project Path="InterviewOneExpert.Domain/InterviewOneExpert.Domain.csproj" />
+  <Project Path="InterviewOneExpert.Infrastructure/InterviewOneExpert.Infrastructure.csproj" />
   <Project Path="InterviewOneExpert.Repositories/InterviewOneExpert.Repositories.csproj" />
   <Project Path="InterviewOneExpert.Services/InterviewOneExpert.Services.csproj" />
 </Solution>

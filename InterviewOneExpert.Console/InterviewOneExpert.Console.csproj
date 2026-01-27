@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InterviewOneExpert.Infrastructure\InterviewOneExpert.Infrastructure.csproj" />
+    <ProjectReference Include="..\InterviewOneExpert.Repositories\InterviewOneExpert.Repositories.csproj" />
+    <ProjectReference Include="..\InterviewOneExpert.Services\InterviewOneExpert.Services.csproj" />
+  </ItemGroup>
+
 </Project>

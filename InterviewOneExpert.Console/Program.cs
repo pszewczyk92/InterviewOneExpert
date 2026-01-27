@@ -1,8 +1,15 @@
-﻿class Program
+﻿using InterviewOneExpert.Console.Configuration;
+using InterviewOneExpert.Services.Abstraction;
+using Microsoft.Extensions.DependencyInjection;
+
+class Program
 {
     static void Main(string[] args)
     {
-        // TODO: Initialize DI container, services, and repository
+        var serviceProvider = IoC.BuildSerivceProvider();
+
+        var orderService = serviceProvider.GetRequiredService<IOrderService>();
+
         // TODO: Demonstrate multi-threaded order processing
         Console.WriteLine("Order Processing System");
 
