@@ -14,12 +14,14 @@ public class InMemoryOrderRepository : IOrderRepository
         _orders.TryAdd(2, new Order { Id = 2, Description = "Phone" });
     }
 
-    public string GetOrder(int orderId)
+    public async Task<string> GetOrderAsync(int orderId)
     {
         if (orderId <= 0)
         {
             throw new ArgumentException("Order ID must be greater than zero.");
         }
+
+        await Task.Delay(100);
 
         if (!_orders.TryGetValue(orderId, out var order))
         {

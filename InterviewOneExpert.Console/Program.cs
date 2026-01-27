@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         var serviceProvider = IoC.BuildSerivceProvider();
 
@@ -14,11 +14,12 @@ class Program
 
         Task[] tasks =
         [
-            Task.Run(() => { orderService.ProcessOrder(1); }),
-            Task.Run(() => { orderService.ProcessOrder(2); }),
-            Task.Run(() => { orderService.ProcessOrder(-1); }),
+            orderService.ProcessOrderAsync(1),
+            orderService.ProcessOrderAsync(2),
+            orderService.ProcessOrderAsync(-1)
         ];
-        Task.WaitAll(tasks);
+        
+        await Task.WhenAll(tasks);
 
         Console.WriteLine("Processing complete.");
     }
