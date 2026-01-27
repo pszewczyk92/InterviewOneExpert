@@ -1,0 +1,58 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Publish output
+publish/
+
+# Environment files
+.env
+.env.*
+
+# Test results
+TestResults/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Backup files
+*.bak
+*.tmp
+*.orig
+
+# JetBrains Rider
+*.DotSettings.user
+
+# Optional: SQLite / local DB files
+*.db
+*.db-shm
+*.db-wal
