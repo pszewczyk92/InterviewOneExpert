@@ -1,23 +1,4 @@
-﻿// Interface for order service
-public interface IOrderService
-{
-    void ProcessOrder(int orderId);
-}
-
-// Interface for order repository
-public interface IOrderRepository
-{
-    string GetOrder(int orderId);
-}
-
-// Sample Order class
-public class Order
-{
-    public int Id { get; set; }
-    public string Description { get; set; }
-}
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
