@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/tests/">
+    <Project Path="InterviewOneExpert.Services.Tests.Unit/InterviewOneExpert.Services.Tests.Unit.csproj" Id="ab55f587-109d-4655-a157-a695e64fde1e" />
+  </Folder>
   <Project Path="InterviewOneExpert.Console/InterviewOneExpert.Console.csproj" />
   <Project Path="InterviewOneExpert.Domain/InterviewOneExpert.Domain.csproj" />
   <Project Path="InterviewOneExpert.Infrastructure/InterviewOneExpert.Infrastructure.csproj" />
