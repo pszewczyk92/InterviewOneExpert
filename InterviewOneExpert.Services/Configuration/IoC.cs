@@ -11,5 +11,6 @@ public static class IoC
         this IServiceCollection services)
         => services
             .AddTransient<IOrderService, OrderService>()
-            .AddTransient<IOrderValidator, OrderValidator>();
+            .AddTransient<IOrderValidator, OrderValidator>()
+            .AddTransient<INotificationService, NotificationService>();
 }

@@ -9,6 +9,7 @@ namespace InterviewOneExpert.Services;
 public class OrderService(
     IOrderRepository repository, 
     IOrderValidator orderValidator,
+    INotificationService notificationService,
     ILogger logger) : IOrderService
 {
     public void AddOrder(Order? order)
@@ -46,6 +47,7 @@ public class OrderService(
             }
 
             var order = await repository.GetOrderAsync(orderId);
+            notificationService.Send($"Order {orderId} Processed! Description {order}");
 
             logger.LogInfo($"Successfully processed order {orderId}: {order}");
         }

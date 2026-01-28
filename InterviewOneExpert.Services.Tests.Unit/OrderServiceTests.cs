@@ -1,6 +1,7 @@
 ﻿using InterviewOneExpert.Domain.Models;
 using InterviewOneExpert.Infrastructure.Abstraction;
 using InterviewOneExpert.Repositories.Abstraction;
+using InterviewOneExpert.Services.Abstraction;
 using InterviewOneExpert.Services.Abstraction.Validators;
 using Moq;
 
@@ -11,6 +12,7 @@ public class OrderServiceTests
     private readonly Mock<IOrderRepository> _orderRepositoryMock = new();
     private readonly Mock<ILogger> _loggerMock = new();
     private readonly Mock<IOrderValidator> _orderValidatorMock = new();
+    private readonly Mock<INotificationService> _notificationServiceMock = new();
 
     private readonly OrderService _sut;
 
@@ -19,6 +21,7 @@ public class OrderServiceTests
         _sut = new OrderService(
             _orderRepositoryMock.Object,
             _orderValidatorMock.Object,
+            _notificationServiceMock.Object,
             _loggerMock.Object);
     }
 
@@ -52,6 +55,9 @@ public class OrderServiceTests
         _loggerMock.Verify(
             l => l.LogError(It.IsAny<string>(), It.IsAny<Exception>()), 
             Times.Never);
+        _notificationServiceMock.Verify(
+            n => n.Send(It.Is<string>(msg => msg.Contains($"{orderId}"))),
+            Times.Once);
     }
 
     [Fact]
@@ -74,6 +80,9 @@ public class OrderServiceTests
         _loggerMock.Verify(
             l => l.LogError(It.IsAny<string>()),
             Times.Once);
+        _notificationServiceMock.Verify(
+            n => n.Send(It.IsAny<string>()),
+            Times.Never);
     }
 
     [Fact]
@@ -100,6 +109,9 @@ public class OrderServiceTests
         _loggerMock.Verify(
             l => l.LogError(It.IsAny<string>(), It.IsAny<Exception>()),
             Times.Once);
+        _notificationServiceMock.Verify(
+            n => n.Send(It.IsAny<string>()),
+            Times.Never);
     }
 
     [Fact]
