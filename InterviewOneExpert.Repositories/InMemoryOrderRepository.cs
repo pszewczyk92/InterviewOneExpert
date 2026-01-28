@@ -16,11 +16,6 @@ public class InMemoryOrderRepository : IOrderRepository
 
     public async Task<string> GetOrderAsync(int orderId)
     {
-        if (orderId <= 0)
-        {
-            throw new ArgumentException("Order ID must be greater than zero.");
-        }
-
         await Task.Delay(100);
 
         if (!_orders.TryGetValue(orderId, out var order))
@@ -34,9 +29,6 @@ public class InMemoryOrderRepository : IOrderRepository
     public void AddOrder(Order? order)
     {
         ArgumentNullException.ThrowIfNull(order);
-
-        if (order.Id <= 0)
-            throw new ArgumentException("Order ID must be greater than zero.");
 
         if (!_orders.TryAdd(order.Id, order))
             throw new InvalidOperationException($"Order {order.Id} already exists.");

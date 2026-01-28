@@ -2,16 +2,26 @@
 using InterviewOneExpert.Infrastructure.Abstraction;
 using InterviewOneExpert.Repositories.Abstraction;
 using InterviewOneExpert.Services.Abstraction;
+using InterviewOneExpert.Services.Abstraction.Validators;
 
 namespace InterviewOneExpert.Services;
 
-public class OrderService(IOrderRepository repository, ILogger logger) : IOrderService
+public class OrderService(
+    IOrderRepository repository, 
+    IOrderValidator orderValidator,
+    ILogger logger) : IOrderService
 {
     public void AddOrder(Order? order)
     {
         try
         {
             logger.LogInfo($"Attempt to add Order {order?.Id}");
+
+            if (!IsNewOrderValid(order))
+            {
+                logger.LogError($"New Order (ID {order?.Id}) is invalid!");
+                return;
+            }
 
             repository.AddOrder(order);
 
@@ -29,6 +39,12 @@ public class OrderService(IOrderRepository repository, ILogger logger) : IOrderS
         {
             logger.LogInfo($"Starting processing for order ID {orderId}");
 
+            if (!orderValidator.IsValid(orderId))
+            {
+                logger.LogError($"Order ID: {orderId} is invalid!");
+                return;
+            }
+
             var order = await repository.GetOrderAsync(orderId);
 
             logger.LogInfo($"Successfully processed order {orderId}: {order}");
@@ -38,4 +54,7 @@ public class OrderService(IOrderRepository repository, ILogger logger) : IOrderS
             logger.LogError($"Failed to process order ID {orderId}", ex);
         }
     }
+
+    private bool IsNewOrderValid(Order? order)
+        => order is not null && orderValidator.IsValid(order.Id);
 }

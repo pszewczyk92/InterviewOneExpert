@@ -15,4 +15,9 @@ public class ConsoleLogger : ILogger
             $"           Exception: {ex.GetType().Name} | {ex.Message} {Environment.NewLine}" +
             $"           StackTrace: {ex.StackTrace}");
     }
+
+    public void LogError(string message)
+    {
+        Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff}] ERROR - {message} {Environment.NewLine}");
+    }
 }
