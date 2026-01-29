@@ -1,5 +1,6 @@
 ﻿using InterviewOneExpert.Console.Configuration;
 using InterviewOneExpert.Domain.Models;
+using InterviewOneExpert.Infrastructure.Abstraction;
 using InterviewOneExpert.Services.Abstraction;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,8 +11,9 @@ class Program
         var serviceProvider = IoC.BuildSerivceProvider();
 
         var orderService = serviceProvider.GetRequiredService<IOrderService>();
+        var logger = serviceProvider.GetRequiredService<ILogger>();
 
-        Console.WriteLine("Order Processing System");
+        logger.LogInfo("Order Processing System");
 
         Task[] tasks =
         [
@@ -31,6 +33,6 @@ class Program
         
         await Task.WhenAll(tasks);
 
-        Console.WriteLine("Processing complete.");
+        logger.LogInfo("Processing complete.");
     }
 }
