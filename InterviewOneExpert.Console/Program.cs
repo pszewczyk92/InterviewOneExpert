@@ -1,7 +1,7 @@
 ﻿using InterviewOneExpert.Console.Configuration;
 using InterviewOneExpert.Domain.Models;
-using InterviewOneExpert.Infrastructure.Abstraction;
-using InterviewOneExpert.Services.Abstraction;
+using InterviewOneExpert.Infrastructure.Abstractions;
+using InterviewOneExpert.Services.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 class Program

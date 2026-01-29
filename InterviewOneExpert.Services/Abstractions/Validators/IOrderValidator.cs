@@ -1,4 +1,4 @@
-﻿namespace InterviewOneExpert.Services.Abstraction.Validators;
+﻿namespace InterviewOneExpert.Services.Abstractions.Validators;
 
 public interface IOrderValidator
 {

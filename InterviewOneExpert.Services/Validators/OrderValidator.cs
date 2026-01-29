@@ -1,4 +1,4 @@
-﻿using InterviewOneExpert.Services.Abstraction.Validators;
+﻿using InterviewOneExpert.Services.Abstractions.Validators;
 
 namespace InterviewOneExpert.Services.Validators;
 

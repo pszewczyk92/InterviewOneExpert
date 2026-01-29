@@ -1,5 +1,5 @@
-﻿using InterviewOneExpert.Services.Abstraction;
-using InterviewOneExpert.Services.Abstraction.Validators;
+﻿using InterviewOneExpert.Services.Abstractions;
+using InterviewOneExpert.Services.Abstractions.Validators;
 using InterviewOneExpert.Services.Validators;
 using Microsoft.Extensions.DependencyInjection;
 

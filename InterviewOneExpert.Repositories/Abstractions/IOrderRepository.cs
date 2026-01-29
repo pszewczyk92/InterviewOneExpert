@@ -1,6 +1,6 @@
 ﻿using InterviewOneExpert.Domain.Models;
 
-namespace InterviewOneExpert.Repositories.Abstraction;
+namespace InterviewOneExpert.Repositories.Abstractions;
 
 public interface IOrderRepository
 {

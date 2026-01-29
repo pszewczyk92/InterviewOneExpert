@@ -1,4 +1,4 @@
-﻿using InterviewOneExpert.Infrastructure.Abstraction;
+﻿using InterviewOneExpert.Infrastructure.Abstractions;
 using InterviewOneExpert.Infrastructure.Configuration.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

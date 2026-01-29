@@ -1,5 +1,5 @@
 ﻿using InterviewOneExpert.Domain.Models;
-using InterviewOneExpert.Repositories.Abstraction;
+using InterviewOneExpert.Repositories.Abstractions;
 using System.Collections.Concurrent;
 
 namespace InterviewOneExpert.Repositories;

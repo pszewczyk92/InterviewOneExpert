@@ -1,4 +1,4 @@
-﻿namespace InterviewOneExpert.Infrastructure.Abstraction;
+﻿namespace InterviewOneExpert.Infrastructure.Abstractions;
 
 public interface ILogger
 {

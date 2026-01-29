@@ -1,4 +1,4 @@
-﻿using InterviewOneExpert.Repositories.Abstraction;
+﻿using InterviewOneExpert.Repositories.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace InterviewOneExpert.Repositories.Configuration;

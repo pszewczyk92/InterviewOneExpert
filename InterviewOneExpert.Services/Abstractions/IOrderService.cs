@@ -1,6 +1,6 @@
 ﻿using InterviewOneExpert.Domain.Models;
 
-namespace InterviewOneExpert.Services.Abstraction;
+namespace InterviewOneExpert.Services.Abstractions;
 
 public interface IOrderService
 {

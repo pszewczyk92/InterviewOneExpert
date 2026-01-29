@@ -1,8 +1,8 @@
 ﻿using InterviewOneExpert.Domain.Models;
-using InterviewOneExpert.Infrastructure.Abstraction;
-using InterviewOneExpert.Repositories.Abstraction;
-using InterviewOneExpert.Services.Abstraction;
-using InterviewOneExpert.Services.Abstraction.Validators;
+using InterviewOneExpert.Infrastructure.Abstractions;
+using InterviewOneExpert.Repositories.Abstractions;
+using InterviewOneExpert.Services.Abstractions;
+using InterviewOneExpert.Services.Abstractions.Validators;
 
 namespace InterviewOneExpert.Services;
 

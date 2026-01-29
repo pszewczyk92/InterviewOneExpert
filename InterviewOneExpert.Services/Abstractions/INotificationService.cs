@@ -1,4 +1,4 @@
-﻿namespace InterviewOneExpert.Services.Abstraction;
+﻿namespace InterviewOneExpert.Services.Abstractions;
 
 public interface INotificationService
 {
